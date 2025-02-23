@@ -117,10 +117,11 @@ namespace V7RC {
         let myReturnValue = -1;
         if (currentType == 'LED' || currentType == 'LE2')
             myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 4), 16);
-        else if (currentType == 'ADV' )
-            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16) - 100;
-        else
+        else if (currentType == 'SRV' || currentType == 'SRT')
             myReturnValue = parseInt(recvMsg.substr(myChannel * 4 + 3, 4));
+        else
+            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16) - 100;
+            
         return myReturnValue;
     }
 
