@@ -16,7 +16,9 @@ namespace V7RC {
         //% block="LED1~4"
         type03 = 3,
         //% block="LED5~8"
-        type04 = 4
+        type04 = 4,
+        //% block="expert"
+        type05 = 5
     }
 
     export enum channel {
@@ -96,6 +98,12 @@ namespace V7RC {
                     myReturnValue = true;
                 }
                 break;
+            case 5:
+                if (recvMsg.includes("SS8")) {
+                    currentType = "ADV";
+                    myReturnValue = true;
+                }
+                break;
             default:
                 myReturnValue = false;
                 break;
@@ -109,6 +117,8 @@ namespace V7RC {
         let myReturnValue = -1;
         if (currentType == 'LED' || currentType == 'LE2')
             myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 4), 16);
+        else if (currentType == 'ADV' )
+            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 4), 16) - 100;
         else
             myReturnValue = parseInt(recvMsg.substr(myChannel * 4 + 3, 4));
         return myReturnValue;

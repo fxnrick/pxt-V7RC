@@ -4,6 +4,7 @@
     "V7RC.commandType.type02|block":"坦克",
     "V7RC.commandType.type03|block":"LED1~4",
     "V7RC.commandType.type04|block":"LED5~8",
+    "V7RC.commandType.type05|block":"專家",
     "V7RC.channel.channel01|block":"1",
     "V7RC.channel.channel02|block":"2",
     "V7RC.channel.channel03|block":"3",
