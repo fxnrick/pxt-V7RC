@@ -117,7 +117,7 @@ namespace V7RC {
         let myReturnValue = -1;
         
         // myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16) - 100;
-        myReturnValue = parseInt('0xc8', 16) - 100;
+        myReturnValue = -100;
             
         return myReturnValue;
     }
