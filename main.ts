@@ -115,12 +115,9 @@ namespace V7RC {
     //% blockId="v7rcChannelInt" block="V7RC code extract from channel:%myChannel to integer"
     export function v7rcChannelInt(myChannel: channel): number {
         let myReturnValue = -1;
-        if (currentType == 'LED' || currentType == 'LE2')
-            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 4), 16);
-        else if (currentType == 'SRV' || currentType == 'SRT')
-            myReturnValue = parseInt(recvMsg.substr(myChannel * 4 + 3, 4));
-        else
-            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16) - 100;
+        
+        // myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16) - 100;
+        myReturnValue = parseInt('0xc8', 16) - 100;
             
         return myReturnValue;
     }
