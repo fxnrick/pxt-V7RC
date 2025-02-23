@@ -118,7 +118,7 @@ namespace V7RC {
         if (currentType == 'LED' || currentType == 'LE2')
             myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 4), 16);
         else if (currentType == 'ADV' )
-            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 4), 16) - 100;
+            myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 4 + 3, 2), 16) - 100;
         else
             myReturnValue = parseInt(recvMsg.substr(myChannel * 4 + 3, 4));
         return myReturnValue;
