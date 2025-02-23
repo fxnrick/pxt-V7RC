@@ -116,8 +116,7 @@ namespace V7RC {
     export function v7rcChannelInt(myChannel: channel): number {
         let myReturnValue = -1;
         
-        // myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16) - 100;
-        myReturnValue = -100;
+        myReturnValue = parseInt('0x' + recvMsg.substr(myChannel * 2 + 3, 2), 16);
             
         return myReturnValue;
     }
